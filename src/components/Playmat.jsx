@@ -9,7 +9,7 @@ const Playmat = ({ cards, choices, handleChoice }) => {
     <ul className={styles.playmat}>
       {cards.map((card) => {
         const cardFlipped =
-          card.id === choiceOne?.id || choiceTwo?.id || card.matched
+          card.id === choiceOne?.id || card.id === choiceTwo?.id || card.matched
 
         const flippedClass = cardFlipped ? styles.flipped : ""
 
