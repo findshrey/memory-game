@@ -1,11 +1,68 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap");
+// ------------------------------ //
+// CONFIG
+// ------------------------------ //
 
-/* base styles */
-body {
-  font-family: Raleway, sans-serif;
+// Font family
+$ff-raleway: "Raleway", sans-serif;
+
+// Font sizes
+$fs-400: 1.7rem;
+
+// Colors
+$c-black-matte: #252525;
+$c-purple: #1b1523;
+$c-white: #fff;
+
+// ------------------------------ //
+// GLOBAL STYLES
+// ------------------------------ //
+
+*,
+*::before,
+*::after {
   margin: 0;
-  font-size: 1.5em;
-  text-align: center;
-  background: #1b1523;
-  color: #fff;
+  padding: 0;
+  box-sizing: border-box;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $c-purple;
+  color: $c-white;
+  font-family: $ff-raleway;
+  font-size: $fs-400;
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+// ------------------------------ //
+// UTILITY CLASSES & MIXINS
+// ------------------------------ //
+
+.container {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
 }
