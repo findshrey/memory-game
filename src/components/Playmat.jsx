@@ -1,13 +1,13 @@
 import imgCardBack from "./../assets/card-back.png"
 
-const Playmat = ({ cards }) => {
+const Playmat = ({ cards, handleChoice }) => {
   return (
     <ul className="playmat">
       {cards.map((card) => (
-        <div key={card.id} className="card">
+        <li className="card" key={card.id} onClick={() => handleChoice(card)}>
           <img src={card.imgSrc} />
           <img src={imgCardBack} />
-        </div>
+        </li>
       ))}
     </ul>
   )
