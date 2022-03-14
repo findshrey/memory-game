@@ -59,7 +59,7 @@ const App = () => {
         <h1>Magic Match</h1>
       </header>
       <button>New Game</button>
-      <Playmat cards={cards} handleChoice={handleChoice} />
+      <Playmat cards={cards} choices={choices} handleChoice={handleChoice} />
     </div>
   )
 }
