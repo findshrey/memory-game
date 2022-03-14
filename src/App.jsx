@@ -23,6 +23,28 @@ const App = () => {
     setCards(shuffleCards())
   }, [])
 
+  useEffect(() => {
+    const { choiceOne, choiceTwo } = choices
+
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.matchId === choiceTwo.matchId) {
+        setCards((prevCards) =>
+          prevCards.map((card) => {
+            if (card.matchId === choiceOne.matchId) {
+              return { ...card, matched: true }
+            } else {
+              return card
+            }
+          })
+        )
+
+        setChoices(initialChoice)
+      } else {
+        setChoices(initialChoice)
+      }
+    }
+  }, [choices])
+
   const handleChoice = (card) => {
     if (!choices.choiceOne) {
       setChoices((prevState) => ({ ...prevState, choiceOne: card }))
