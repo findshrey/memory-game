@@ -1,0 +1,35 @@
+.playmat {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  color: red;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease-in-out;
+}
+
+.flipped {
+  transform: rotateX(180deg);
+}
+
+.card-back,
+.card-front {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-front {
+  transform: rotateX(180deg);
+}
+
+.card-back {
+  transform: rotateX(0deg);
+}

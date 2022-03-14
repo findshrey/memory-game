@@ -40,7 +40,7 @@ const App = () => {
 
         setChoices(initialChoice)
       } else {
-        setChoices(initialChoice)
+        setTimeout(() => setChoices(initialChoice), 1000)
       }
     }
   }, [choices])
